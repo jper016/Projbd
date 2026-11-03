@@ -150,6 +150,154 @@
             100% { width: 120px; height: 120px; opacity: 0; border-color: rgba(255, 0, 127, 0); }
         }
 
+        /* Luxury Spinning Vinyl Music Logo Widget */
+        .music-widget {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50px;
+            padding: 7px 16px 7px 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 0 25px rgba(255, 20, 147, 0.5), 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 2px solid #ff758c;
+            z-index: 105;
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: widgetGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes widgetGlow {
+            0% { box-shadow: 0 0 10px rgba(255, 20, 147, 0.4), 0 8px 25px rgba(0,0,0,0.15); }
+            100% { box-shadow: 0 0 25px rgba(255, 105, 180, 0.9), 0 12px 30px rgba(255, 20, 147, 0.3); }
+        }
+
+        .music-widget:hover {
+            transform: scale(1.08);
+            background: #ffffff;
+        }
+
+        /* Sound Ripple Aura Effect */
+        .music-widget::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            border-radius: 50px;
+            border: 2px dashed #ff1493;
+            opacity: 0;
+            z-index: -1;
+            animation: musicRipple 2s linear infinite;
+        }
+
+        .music-widget.paused::before {
+            animation: none;
+        }
+
+        @keyframes musicRipple {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.18); opacity: 0; }
+        }
+
+        /* Spinning Vinyl Disc Logo */
+        .vinyl-logo {
+            width: 40px;
+            height: 40px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5), inset 0 0 4px rgba(255,255,255,0.4);
+            animation: spinVinyl 3s linear infinite;
+        }
+
+        @keyframes spinVinyl {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .music-widget.paused .vinyl-logo {
+            animation-play-state: paused;
+            filter: grayscale(80%);
+        }
+
+        .vinyl-grooves {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 1px dashed rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+        }
+
+        .vinyl-center {
+            width: 15px;
+            height: 15px;
+            background: #ff1493;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.5rem;
+            z-index: 2;
+        }
+
+        /* Equalizer Sound Waves Bars */
+        .sound-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            height: 18px;
+        }
+
+        .bar {
+            width: 3.5px;
+            background: linear-gradient(to top, #ff1493, #ff758c);
+            border-radius: 3px;
+            animation: soundWave 0.8s ease-in-out infinite alternate;
+        }
+
+        .bar:nth-child(1) { height: 8px; animation-delay: 0.1s; }
+        .bar:nth-child(2) { height: 16px; animation-delay: 0.3s; }
+        .bar:nth-child(3) { height: 12px; animation-delay: 0.2s; }
+        .bar:nth-child(4) { height: 18px; animation-delay: 0.4s; }
+
+        @keyframes soundWave {
+            0% { transform: scaleY(0.4); }
+            100% { transform: scaleY(1.2); }
+        }
+
+        .music-widget.paused .bar {
+            animation-play-state: paused;
+            background: #ccc;
+            height: 4px !important;
+        }
+
+        .music-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .music-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #d81b60;
+            white-space: nowrap;
+        }
+
+        .music-status {
+            font-size: 0.62rem;
+            color: #888;
+            font-weight: 600;
+        }
+
         /* Extra Cake-Holding Shih Tzus with Ribbons on Sides */
         .side-dog {
             position: absolute;
@@ -241,7 +389,6 @@
             100% { transform: scale(1.2) rotate(3deg); opacity: 1; fill: #ffeb3b; }
         }
 
-        /* When opened: blow out flame, show smoke, and wave paw */
         .container.opened #candle-flame {
             display: none;
         }
@@ -290,7 +437,7 @@
             font-weight: 600;
         }
 
-        /* Polaroid Photo Frames Section (Pictures Only) */
+        /* Polaroid Photo Frames Section */
         .photo-gallery {
             display: flex;
             justify-content: center;
@@ -331,29 +478,66 @@
             border-radius: 5px;
         }
 
-        /* Enhanced Letter Box with Smooth Slide Animation */
+        /* Enhanced Open Letter Box Design */
         .message-box {
             background: linear-gradient(135deg, #fff0f3 0%, #ffe4ec 100%);
-            padding: 16px;
-            border-radius: 14px;
+            padding: 20px 18px;
+            border-radius: 18px;
             color: #444;
             font-size: 0.9rem;
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 18px;
-            border: 2px dashed #ffb3c6;
+            border: 2px dashed #ff758c;
             max-height: 0;
             opacity: 0;
             overflow: hidden;
             transform: translateY(20px) scale(0.95);
-            transition: max-height 0.6s ease, opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: max-height 0.7s ease, opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: left;
-            box-shadow: inset 0 2px 10px rgba(255, 182, 193, 0.3);
+            box-shadow: inset 0 2px 15px rgba(255, 182, 193, 0.4), 0 8px 25px rgba(255, 117, 140, 0.15);
+            position: relative;
         }
 
         .message-box.show {
-            max-height: 340px;
+            max-height: 500px;
             opacity: 1;
             transform: translateY(0) scale(1);
+        }
+
+        /* Decorative Letter Header */
+        .letter-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #ffb3c6;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            color: #d81b60;
+            font-size: 0.95rem;
+        }
+
+        /* Mini Floating Pups Inside Letter */
+        .letter-pups {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 14px;
+            font-size: 1.5rem;
+            animation: bouncePups 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes bouncePups {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
+        }
+
+        .letter-footer-note {
+            text-align: right;
+            font-family: 'Sacramento', cursive;
+            font-size: 1.5rem;
+            color: #d81b60;
+            margin-top: 8px;
         }
 
         .btn {
@@ -405,6 +589,24 @@
     <div class="corner-knot top-right">🎀</div>
     <div class="corner-knot bottom-left">🎀</div>
     <div class="corner-knot bottom-right">🎀</div>
+
+    <!-- Floating Spinning Vinyl Record Music Logo Widget -->
+    <div class="music-widget" id="musicWidget" onclick="toggleMusic()" title="Click to Play/Pause Birthday Song">
+        <div class="vinyl-logo">
+            <div class="vinyl-grooves"></div>
+            <div class="vinyl-center">♫</div>
+        </div>
+        <div class="sound-bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="music-info">
+            <span class="music-title">Birthday Song</span>
+            <span class="music-status" id="musicStatus">Playing</span>
+        </div>
+    </div>
 
     <canvas id="confetti-canvas"></canvas>
     <div id="elements-container"></div>
@@ -469,7 +671,7 @@
             <!-- Cute Animated Shih Tzu Dog Holding Birthday Cake & Candle -->
             <div class="dog-container">
                 <svg viewBox="0 0 200 200" width="100%" height="100%">
-                    <!-- Fluffy Shih Tzu Ears (Drop ears) -->
+                    <!-- Fluffy Shih Tzu Ears -->
                     <path d="M 55 70 Q 40 100 55 125 Q 70 110 65 80 Z" fill="#d7ccc8" />
                     <path d="M 145 70 Q 160 100 145 125 Q 130 110 135 80 Z" fill="#d7ccc8" />
                     
@@ -520,10 +722,10 @@
                 </svg>
             </div>
 
-            <h1>Happy Birthday Joyce Mae Ann Imperial!(Chichi)</h1>
-            <h2>To my absolute favorite person & bestie ✨ From Jasper</h2>
+            <h1>Happy Birthday Joyce Mae Ann Imperial! (Chichi)</h1>
+            <h2>To my absolute favorite girl!🥳</h2>
 
-            <!-- Photo Frames (Pictures Only, No Captions) -->
+            <!-- Photo Frames -->
             <div class="photo-gallery">
                 <div class="polaroid">
                     <img src="bd1.jpg" alt="Memory 1">
@@ -533,14 +735,31 @@
                 </div>
             </div>
 
+            <!-- Enhanced Open Letter Box -->
             <div class="message-box" id="messageBox">
-                <p>お誕生日おめでとう🎂, Chichi! 🌸 Thank you for being such an amazing, wonderful person who brings so much light, warmth, and laughter into everyone's life.Stay for being king person kung anong klaseng tao pagkaka kilala ko sayo😂. I hope magkaroon pa tayo ng more memories😊  I hope your special day is filled with all the love, hugs, and endless happiness you deserve! Cheers to an amazing year ahead! 🥂💖 素敵な一日を！楽しんでくださいね！🥳I miss you so much Chi!😊</p>
+                <div class="letter-header">
+                    <span>💌 Special Birthday Message</span>
+                    <span>✨🎂✨</span>
+                </div>
+                <p>お誕生日おめでとう🎂, Chichi! 🌸 Thank you for being such an amazing, wonderful person who brings so much light, warmth, and laughter into everyone's life. Stay just the kind person kung anong klaseng tao pagkaka-kilala ko sayo 😂. I hope magkaroon pa tayo ng more memories 😊. I hope your special day is filled with all the love, hugs, and endless happiness you deserve! Cheers to an amazing year ahead! 🥂💖 素敵な一日を！楽しんでくださいね！🥳 I miss you so much Chi! 😊</p>
+                <div class="letter-pups">
+                    <span>🐶🐾</span>
+                    <span>🎀💖🎀</span>
+                    <span>🐾🐶</span>
+                </div>
+                <div class="letter-footer-note">
+                    - From Jasper
+                </div>
             </div>
-<h1>From Jasper</h1>
-            <button class="btn" id="surpriseBtn" onclick="revealSurprise()">Open Your Birthday Wish 💌</button>
+
+            <button class="btn" id="surpriseBtn" onclick="revealSurprise()">Open the Birthday Letter 💌</button>
         </div>
     </div>
-<h1>お誕生日おめでとう</h1>
+
+    <h1>お誕生日おめでとう</h1>
+    <h1>お誕生日おめでとう</h1>
+    <h1>お誕生日おめでとう</h1>
+
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
     <script>
@@ -576,7 +795,6 @@
 
         // Interactive Click/Touch Heart Sprays & Ripples
         document.addEventListener('click', (e) => {
-            // Heart or emoji pop
             const heart = document.createElement('div');
             heart.classList.add('click-heart');
             heart.innerHTML = ['💖', '✨', '🌸', '🐶', '💕', '🎁'][Math.floor(Math.random() * 6)];
@@ -585,7 +803,6 @@
             document.body.appendChild(heart);
             setTimeout(() => heart.remove(), 1200);
 
-            // Ripple ring effect
             const ripple = document.createElement('div');
             ripple.classList.add('click-ripple');
             ripple.style.left = e.clientX + 'px';
@@ -595,9 +812,31 @@
         });
 
         const music = document.getElementById('bg-music');
+        const musicWidget = document.getElementById('musicWidget');
+        const musicStatus = document.getElementById('musicStatus');
+
+        // Toggle Music Play/Pause via Floating Vinyl Logo Widget
+        function toggleMusic() {
+            if (music.paused) {
+                music.play().then(() => {
+                    musicWidget.classList.remove('paused');
+                    musicStatus.textContent = "Playing";
+                }).catch(e => {});
+            } else {
+                music.pause();
+                musicWidget.classList.add('paused');
+                musicStatus.textContent = "Paused";
+            }
+        }
 
         // Attempt immediate autoplay on load
-        music.play().catch(e => {
+        music.play().then(() => {
+            musicWidget.classList.remove('paused');
+            musicStatus.textContent = "Playing";
+        }).catch(e => {
+            music.pause();
+            musicWidget.classList.add('paused');
+            musicStatus.textContent = "Tap to Play";
             console.log("Autoplay waiting for initial interaction.");
         });
 
@@ -605,6 +844,8 @@
         function startAudioOnInteraction() {
             if (music.paused) {
                 music.play().then(() => {
+                    musicWidget.classList.remove('paused');
+                    musicStatus.textContent = "Playing";
                     console.log("Music started successfully.");
                 }).catch(e => {});
             }
@@ -624,7 +865,6 @@
             msgBox.classList.add('show');
             btn.style.display = 'none';
 
-            // Epic Multi-stage Fireworks & Confetti Burst
             var duration = 4.5 * 1000;
             var animationEnd = Date.now() + duration;
 
