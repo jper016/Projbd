@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Joyce Mae Ann Imperial! 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 30%, #fecfef 65%, #ff9a9e 100%);
+            background-size: 350% 350%;
+            animation: gradientShift 8s ease infinite;
+            min-height: 100vh;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+            padding: 15px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Decorative Celebration Ribbons & Knots Banner */
+        .ribbon-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 48px;
+            background: repeating-linear-gradient(
+                45deg,
+                #ff1493,
+                #ff1493 22px,
+                #ff69b4 22px,
+                #ff69b4 44px
+            );
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 5;
+            overflow: hidden;
+        }
+
+        .ribbon-bow {
+            position: absolute;
+            top: 26px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.4rem;
+            z-index: 6;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+            animation: bounceBow 2s ease-in-out infinite;
+        }
+
+        @keyframes bounceBow {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.2) rotate(10deg); }
+        }
+
+        /* Additional Cute Corner Ribbon Knots */
+        .corner-knot {
+            position: absolute;
+            font-size: 1.9rem;
+            z-index: 12;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.25));
+            animation: pulseKnot 2s ease-in-out infinite alternate;
+        }
+        .corner-knot.top-left { top: 55px; left: 15px; transform: rotate(-30deg); }
+        .corner-knot.top-right { top: 55px; right: 15px; transform: rotate(30deg); }
+        .corner-knot.bottom-left { bottom: 15px; left: 15px; transform: rotate(30deg); }
+        .corner-knot.bottom-right { bottom: 15px; right: 15px; transform: rotate(-30deg); }
+
+        @keyframes pulseKnot {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.25) rotate(8deg); }
+        }
+
+        /* Floating background balloons, gifts & stars */
+        .floating-element {
+            position: absolute;
+            animation: floatUpElem 7s linear infinite;
+            bottom: -60px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes floatUpElem {
+            0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(-55vh) scale(1.1) rotate(15deg); opacity: 0.85; }
+            100% { transform: translateY(-115vh) scale(1.25) rotate(-15deg); opacity: 0; }
+        }
+
+        /* Twinkling Magical Sparkles */
+        .sparkle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s ease-in-out infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { transform: scale(0.3); opacity: 0.2; }
+            50% { transform: scale(1.5); opacity: 1; box-shadow: 0 0 14px #fff, 0 0 28px #ff69b4; }
+        }
+
+        /* Interactive Click/Touch Heart & Ripple Effects */
+        .click-heart {
+            position: absolute;
+            font-size: 1.6rem;
+            animation: floatUpHeart 1.2s ease-out forwards;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        @keyframes floatUpHeart {
+            0% { transform: translateY(0) scale(0.4) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-90px) scale(1.4) rotate(25deg); opacity: 0; }
+        }
+
+        .click-ripple {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: rippleEffect 0.7s ease-out forwards;
+            pointer-events: none;
+            z-index: 99;
+        }
+
+        @keyframes rippleEffect {
+            0% { width: 10px; height: 10px; opacity: 1; }
+            100% { width: 120px; height: 120px; opacity: 0; border-color: rgba(255, 0, 127, 0); }
+        }
+
+        /* Extra Cake-Holding Shih Tzus with Ribbons on Sides */
+        .side-dog {
+            position: absolute;
+            width: 105px;
+            height: 105px;
+            z-index: 5;
+            animation: floatBuddy 5s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        .side-dog.left {
+            top: 15%;
+            left: 3%;
+            transform: rotate(-12deg);
+        }
+
+        .side-dog.right {
+            bottom: 12%;
+            right: 3%;
+            transform: rotate(12deg);
+            animation-delay: 2s;
+        }
+
+        @keyframes floatBuddy {
+            0% { transform: translateY(0px) rotate(-10deg) scale(1); }
+            100% { transform: translateY(-24px) rotate(10deg) scale(1.08); }
+        }
+
+        /* LED Border Container Wrapper */
+        .container-wrapper {
+            position: relative;
+            max-width: 440px;
+            width: 100%;
+            border-radius: 34px;
+            padding: 6px;
+            background: linear-gradient(90deg, #ff007f, #ff758c, #ffff00, #00ffff, #ff007f);
+            background-size: 400% 400%;
+            animation: ledBorderGlow 3s linear infinite;
+            z-index: 10;
+            box-shadow: 0 0 40px rgba(255, 117, 140, 0.9), 0 0 80px rgba(255, 255, 255, 0.7);
+            margin-top: 25px;
+        }
+
+        @keyframes ledBorderGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.97);
+            padding: 28px 22px;
+            border-radius: 28px;
+            backdrop-filter: blur(20px);
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            position: relative;
+            width: 100%;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Cute Shih Tzu Dog Animation */
+        .dog-container {
+            width: 115px;
+            height: 115px;
+            margin: 0 auto 5px;
+            position: relative;
+            animation: bounceDog 2s ease-in-out infinite;
+        }
+
+        @keyframes bounceDog {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Candle Flame Flickering */
+        .container:not(.opened) #candle-flame,
+        .side-dog #side-flame {
+            animation: flicker 0.4s ease-in-out infinite alternate;
+            transform-origin: center bottom;
+        }
+
+        @keyframes flicker {
+            0% { transform: scale(1) rotate(-3deg); opacity: 0.9; }
+            100% { transform: scale(1.2) rotate(3deg); opacity: 1; fill: #ffeb3b; }
+        }
+
+        /* When opened: blow out flame, show smoke, and wave paw */
+        .container.opened #candle-flame {
+            display: none;
+        }
+
+        .container.opened #smoke {
+            display: block;
+            animation: blowSmoke 1s ease-out forwards;
+        }
+
+        @keyframes blowSmoke {
+            0% { transform: translateY(0) scale(0.5); opacity: 1; }
+            100% { transform: translateY(-20px) scale(1.8); opacity: 0; }
+        }
+
+        .container.opened .dog-container svg #waving-paw {
+            animation: wavePaw 0.25s ease-in-out infinite alternate !important;
+        }
+
+        @keyframes wavePaw {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-45deg); }
+        }
+
+        /* Typography with Shimmer Effect */
+        h1 {
+            font-family: 'Sacramento', cursive;
+            font-size: 2.6rem;
+            background: linear-gradient(45deg, #d81b60, #ff4081, #ff758c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2px;
+            line-height: 1.1;
+            filter: drop-shadow(2px 2px 4px rgba(216, 27, 96, 0.15));
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(20deg); }
+        }
+
+        h2 {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+
+        /* Polaroid Photo Frames Section (Pictures Only) */
+        .photo-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+            transition: transform 0.4s ease;
+        }
+
+        .container.opened .photo-gallery {
+            transform: scale(0.95);
+        }
+
+        .polaroid {
+            background: #fff;
+            padding: 8px;
+            box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+            border-radius: 8px;
+            width: 120px;
+            transform: rotate(-3deg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .polaroid:nth-child(2) {
+            transform: rotate(3deg);
+        }
+
+        .polaroid:hover {
+            transform: scale(1.1) rotate(0deg);
+            box-shadow: 0 15px 30px rgba(216, 27, 96, 0.35);
+            z-index: 5;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Enhanced Letter Box with Smooth Slide Animation */
+        .message-box {
+            background: linear-gradient(135deg, #fff0f3 0%, #ffe4ec 100%);
+            padding: 16px;
+            border-radius: 14px;
+            color: #444;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 18px;
+            border: 2px dashed #ffb3c6;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateY(20px) scale(0.95);
+            transition: max-height 0.6s ease, opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: left;
+            box-shadow: inset 0 2px 10px rgba(255, 182, 193, 0.3);
+        }
+
+        .message-box.show {
+            max-height: 340px;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%, #ff4081 100%);
+            background-size: 200% auto;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(255, 117, 140, 0.5);
+            transition: all 0.3s ease;
+            font-family: 'Quicksand', sans-serif;
+            width: 100%;
+            animation: pulseBtn 2s infinite;
+        }
+
+        @keyframes pulseBtn {
+            0% { box-shadow: 0 0 0 0 rgba(255, 117, 140, 0.6); }
+            70% { box-shadow: 0 0 0 14px rgba(255, 117, 140, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 117, 140, 0); }
+        }
+
+        .btn:active {
+            transform: scale(0.96);
+        }
+
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Ribbon Banner & Bow -->
+    <div class="ribbon-banner"></div>
+    <div class="ribbon-bow">🎀</div>
+
+    <!-- Additional Decorative Corner Knots -->
+    <div class="corner-knot top-left">🎀</div>
+    <div class="corner-knot top-right">🎀</div>
+    <div class="corner-knot bottom-left">🎀</div>
+    <div class="corner-knot bottom-right">🎀</div>
+
+    <canvas id="confetti-canvas"></canvas>
+    <div id="elements-container"></div>
+    <div id="sparkles-container"></div>
+
+    <!-- Extra Floating Side Shih Tzus Holding Cakes with Ribbon Bows -->
+    <div class="side-dog left">
+        <svg viewBox="0 0 200 200" width="100%" height="100%">
+            <path d="M 55 70 Q 40 100 55 125 Q 70 110 65 80 Z" fill="#d7ccc8" />
+            <path d="M 145 70 Q 160 100 145 125 Q 130 110 135 80 Z" fill="#d7ccc8" />
+            <circle cx="100" cy="92" r="44" fill="#d7ccc8" />
+            <circle cx="85" cy="65" r="14" fill="#efebe9" />
+            <circle cx="115" cy="65" r="14" fill="#efebe9" />
+            <circle cx="100" cy="62" r="16" fill="#ffffff" />
+            <ellipse cx="100" cy="102" rx="20" ry="14" fill="#ffffff" />
+            <ellipse cx="100" cy="97" rx="7" ry="5" fill="#2d1505" />
+            <path d="M 95 104 Q 100 110 105 104" stroke="#2d1505" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <circle cx="82" cy="85" r="5.5" fill="#2d1505" />
+            <circle cx="118" cy="85" r="5.5" fill="#2d1505" />
+            <circle cx="84" cy="83" r="2" fill="#fff" />
+            <circle cx="120" cy="83" r="2" fill="#fff" />
+            <!-- Cake -->
+            <rect x="75" y="135" width="50" height="25" rx="4" fill="#f8bbd0" />
+            <path d="M 75 140 Q 87 148 100 140 Q 112 148 125 140" fill="#fff" />
+            <rect x="97" y="118" width="6" height="20" rx="2" fill="#ab47bc" />
+            <ellipse id="side-flame" cx="100" cy="112" rx="4" ry="7" fill="#ffa726" />
+        </svg>
+    </div>
+
+    <div class="side-dog right">
+        <svg viewBox="0 0 200 200" width="100%" height="100%">
+            <path d="M 55 70 Q 40 100 55 125 Q 70 110 65 80 Z" fill="#d7ccc8" />
+            <path d="M 145 70 Q 160 100 145 125 Q 130 110 135 80 Z" fill="#d7ccc8" />
+            <circle cx="100" cy="92" r="44" fill="#d7ccc8" />
+            <circle cx="85" cy="65" r="14" fill="#efebe9" />
+            <circle cx="115" cy="65" r="14" fill="#efebe9" />
+            <circle cx="100" cy="62" r="16" fill="#ffffff" />
+            <ellipse cx="100" cy="102" rx="20" ry="14" fill="#ffffff" />
+            <ellipse cx="100" cy="97" rx="7" ry="5" fill="#2d1505" />
+            <path d="M 95 104 Q 100 110 105 104" stroke="#2d1505" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <circle cx="82" cy="85" r="5.5" fill="#2d1505" />
+            <circle cx="118" cy="85" r="5.5" fill="#2d1505" />
+            <circle cx="84" cy="83" r="2" fill="#fff" />
+            <circle cx="120" cy="83" r="2" fill="#fff" />
+            <!-- Cake -->
+            <rect x="75" y="135" width="50" height="25" rx="4" fill="#f8bbd0" />
+            <path d="M 75 140 Q 87 148 100 140 Q 112 148 125 140" fill="#fff" />
+            <rect x="97" y="118" width="6" height="20" rx="2" fill="#ab47bc" />
+            <ellipse id="side-flame" cx="100" cy="112" rx="4" ry="7" fill="#ffa726" />
+        </svg>
+    </div>
+
+    <!-- Audio element using local hbd.mp3 file -->
+    <audio id="bg-music" autoplay loop>
+        <source src="hbd.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- LED Glowing Border Wrapper -->
+    <div class="container-wrapper">
+        <div class="container" id="mainContainer">
+            <!-- Cute Animated Shih Tzu Dog Holding Birthday Cake & Candle -->
+            <div class="dog-container">
+                <svg viewBox="0 0 200 200" width="100%" height="100%">
+                    <!-- Fluffy Shih Tzu Ears (Drop ears) -->
+                    <path d="M 55 70 Q 40 100 55 125 Q 70 110 65 80 Z" fill="#d7ccc8" />
+                    <path d="M 145 70 Q 160 100 145 125 Q 130 110 135 80 Z" fill="#d7ccc8" />
+                    
+                    <!-- Fluffy Head & Hair Tuft -->
+                    <circle cx="100" cy="92" r="44" fill="#d7ccc8" />
+                    <circle cx="85" cy="65" r="14" fill="#efebe9" />
+                    <circle cx="115" cy="65" r="14" fill="#efebe9" />
+                    <circle cx="100" cy="62" r="16" fill="#ffffff" />
+                    
+                    <!-- White Snout / Muzzle -->
+                    <ellipse cx="100" cy="102" rx="20" ry="14" fill="#ffffff" />
+                    <ellipse cx="100" cy="97" rx="7" ry="5" fill="#2d1505" />
+                    <path d="M 95 104 Q 100 110 105 104" stroke="#2d1505" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                    
+                    <!-- Big Puppy Eyes -->
+                    <circle cx="82" cy="85" r="5.5" fill="#2d1505" />
+                    <circle cx="118" cy="85" r="5.5" fill="#2d1505" />
+                    <circle cx="84" cy="83" r="2" fill="#fff" />
+                    <circle cx="120" cy="83" r="2" fill="#fff" />
+                    
+                    <!-- Rosy Cheeks -->
+                    <circle cx="72" cy="96" r="7" fill="#ff8a80" opacity="0.6" />
+                    <circle cx="128" cy="96" r="7" fill="#ff8a80" opacity="0.6" />
+                    
+                    <!-- Party Hat -->
+                    <polygon points="100,10 77,55 123,55" fill="#ff4081" />
+                    <circle cx="100" cy="8" r="7" fill="#ffeb3b" />
+                    <path d="M 83,48 Q 100,38 117,48" stroke="#fff" stroke-width="2.5" fill="none" />
+
+                    <!-- Birthday Cake in Front of Dog -->
+                    <rect x="75" y="135" width="50" height="25" rx="4" fill="#f8bbd0" />
+                    <path d="M 75 140 Q 87 148 100 140 Q 112 148 125 140" fill="#fff" />
+                    <!-- Candle -->
+                    <rect x="97" y="118" width="6" height="20" rx="2" fill="#ab47bc" />
+                    <!-- Flame -->
+                    <ellipse id="candle-flame" cx="100" cy="112" rx="4" ry="7" fill="#ffa726" />
+                    <!-- Smoke -->
+                    <text id="smoke" x="93" y="112" font-size="14" style="display:none;">💨</text>
+                    
+                    <!-- Waving Left Paw -->
+                    <g id="waving-paw" style="transform-origin: 52px 125px;">
+                        <circle cx="52" cy="125" r="10" fill="#ffffff" />
+                        <circle cx="49" cy="123" r="3" fill="#d7ccc8" opacity="0.5" />
+                    </g>
+                    
+                    <!-- Right Paw -->
+                    <circle cx="148" cy="125" r="10" fill="#ffffff" />
+                </svg>
+            </div>
+
+            <h1>Happy Birthday Joyce Mae Ann Imperial!</h1>
+            <h2>To my absolute favorite person & bestie ✨ From Jasper</h2>
+
+            <!-- Photo Frames (Pictures Only, No Captions) -->
+            <div class="photo-gallery">
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=60" alt="Memory 1">
+                </div>
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&auto=format&fit=crop&q=60" alt="Memory 2">
+                </div>
+            </div>
+
+            <div class="message-box" id="messageBox">
+                <p>Happy Birthday, Joyce Mae Ann Imperial (Chichi)! 🌸 Thank you for being such an amazing, wonderful person who brings so much light, warmth, and laughter into everyone's life. I hope your special day is filled with all the love, hugs, and endless happiness you deserve! Cheers to an amazing year ahead! 🥂💖 — With love, Jasper</p>
+            </div>
+
+            <button class="btn" id="surpriseBtn" onclick="revealSurprise()">Open Your Birthday Wish 💌</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <script>
+        // Floating Balloons, Gifts & Stars Generator
+        const elementsContainer = document.getElementById('elements-container');
+        const floatingSymbols = ['🎈', '🎁', '⭐', '💖', '🌸', '✨'];
+        
+        setInterval(() => {
+            const elem = document.createElement('div');
+            elem.classList.add('floating-element');
+            elem.innerHTML = floatingSymbols[Math.floor(Math.random() * floatingSymbols.length)];
+            elem.style.left = Math.random() * 95 + 'vw';
+            elem.style.fontSize = (Math.random() * 0.8 + 1.2) + 'rem';
+            elem.style.animationDuration = (Math.random() * 4 + 5) + 's';
+            elementsContainer.appendChild(elem);
+            setTimeout(() => { elem.remove(); }, 8000);
+        }, 350);
+
+        // Twinkling Magical Sparkles
+        const sparklesContainer = document.getElementById('sparkles-container');
+        setInterval(() => {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            const size = Math.random() * 6 + 4 + 'px';
+            sparkle.style.width = size;
+            sparkle.style.height = size;
+            sparkle.style.animationDuration = (Math.random() * 1.5 + 1) + 's';
+            sparklesContainer.appendChild(sparkle);
+            setTimeout(() => { sparkle.remove(); }, 2500);
+        }, 150);
+
+        // Interactive Click/Touch Heart Sprays & Ripples
+        document.addEventListener('click', (e) => {
+            // Heart or emoji pop
+            const heart = document.createElement('div');
+            heart.classList.add('click-heart');
+            heart.innerHTML = ['💖', '✨', '🌸', '🐶', '💕', '🎁'][Math.floor(Math.random() * 6)];
+            heart.style.left = (e.clientX - 10) + 'px';
+            heart.style.top = (e.clientY - 10) + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1200);
+
+            // Ripple ring effect
+            const ripple = document.createElement('div');
+            ripple.classList.add('click-ripple');
+            ripple.style.left = e.clientX + 'px';
+            ripple.style.top = e.clientY + 'px';
+            document.body.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 700);
+        });
+
+        const music = document.getElementById('bg-music');
+
+        // Attempt immediate autoplay on load
+        music.play().catch(e => {
+            console.log("Autoplay waiting for initial interaction.");
+        });
+
+        // Universal touch/click fallback to start music instantly on first tap anywhere
+        function startAudioOnInteraction() {
+            if (music.paused) {
+                music.play().then(() => {
+                    console.log("Music started successfully.");
+                }).catch(e => {});
+            }
+            document.body.removeEventListener('touchstart', startAudioOnInteraction);
+            document.body.removeEventListener('click', startAudioOnInteraction);
+        }
+
+        document.body.addEventListener('touchstart', startAudioOnInteraction, { once: true });
+        document.body.addEventListener('click', startAudioOnInteraction, { once: true });
+
+        function revealSurprise() {
+            const container = document.getElementById('mainContainer');
+            const msgBox = document.getElementById('messageBox');
+            const btn = document.getElementById('surpriseBtn');
+            
+            container.classList.add('opened');
+            msgBox.classList.add('show');
+            btn.style.display = 'none';
+
+            // Epic Multi-stage Fireworks & Confetti Burst
+            var duration = 4.5 * 1000;
+            var animationEnd = Date.now() + duration;
+
+            var interval = setInterval(function() {
+                var timeLeft = animationEnd - Date.now();
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+                
+                confetti({
+                    particleCount: 80,
+                    angle: 60,
+                    spread: 75,
+                    origin: { x: 0, y: 0.7 },
+                    colors: ['#ff007f', '#ff69b4', '#ffff00', '#ffffff', '#ff1493']
+                });
+                confetti({
+                    particleCount: 80,
+                    angle: 120,
+                    spread: 75,
+                    origin: { x: 1, y: 0.7 },
+                    colors: ['#ff007f', '#ff69b4', '#ffff00', '#ffffff', '#ff1493']
+                });
+            }, 280);
+        }
+    </script>
+</body>
+</html>
